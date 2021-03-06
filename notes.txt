@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+
+<html>
+<!--Heading-->
+
+<head>
+    <!--Links-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!--Style(CSS)-->
+    <style>
+        #heading {
+            text-align: center;
+            background-color: #f1f1f1;
+            border-left: 3px solid orange;
+            border-right: 3px solid orange;
+        }
+
+        #notes {
+            color: black;
+        }
+
+        #nav {
+            text-align: center;
+        }
+
+        #pre {
+            height: 85vh;
+            width: auto;
+            overflow-x: auto;
+            overflow-y: auto;
+            border-left: 3px solid #4caf50;
+            background-color: none;
+            text-align: inherit;
+        }
+
+        body {
+            /*background: #E4E4E4 url(https://raw.github.com/subtlepatterns/SubtlePatterns/master/cardboard_flat.png) repeat;*/
+            background: white;
+        }
+
+        /*              Style for Verticle Tab Start                */
+        * {
+            box-sizing: border-box;
+
+            font-family: consolas;
+        }
+
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        /* Style the tab */
+        .tab {
+            float: left;
+            border: none;
+            background-color: #f1f1f1;
+            width: 10%;
+            height: 95vh;
+            overflow-y: auto;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            display: block;
+            background-color: inherit;
+            color: black;
+            padding: 12px 16px;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: left;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: small;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Create an active/current "tab button" class */
+        .tab button.active {
+            background-color: #4caf50;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            float: left;
+            padding: 0px 12px;
+            border: none;
+            width: 90%;
+            border-left: none;
+            height: 300px;
+        }
+
+        /*                Style for Vertical Tab End                */
+        /* width */
+        ::-webkit-scrollbar {
+            width: 3px;
+            height: 3px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #4caf50;
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: red;
+        }
+
+        ::-webkit-scrollbar-button {
+            width: 60vh;
+            height: 20vh;
+        }
+
+        /* Scrollbar customization */
+    </style>
+    <!--Title-->
+    <title>Angular Notes</title>
+</head>
+
+<body onresize="myFunction()">
+    <!-- Code for Vertical Tab Start -->
+    <div class="tab">
+        <button id="defaultOpen" class="tablinks" onclick="openCity(event, 'codeme')">
+            Code Me (Angular)
+        </button>
+        <button id="" class="tablinks" onclick="openCity(event, 'Introduction to Angular')">
+            Introduction to Angular
+        </button>
+        <button id="" class="tablinks" onclick="openCity(event, 'Introduction to Angular Component')">
+            Introduction to Angular Component
+        </button>
+        <button id="" class="tablinks" onclick="openCity(event, 'Data Binding')">
+            Data Binding
+        </button>
+        <button id="" class="tablinks" onclick="openCity(event, 'String Interpolation')">
+            String Interpolation
+        </button>
+        <button id="" class="tablinks" onclick="openCity(event, 'Property Binding')">
+            Property Binding
+        </button>
+        <button id="" class="tablinks" onclick="openCity(event, 'Class and Style Binding')">
+            Class and Style Binding
+        </button>
+        <button id="" class="tablinks" onclick="openCity(event, 'Event Binding')">
+            Event Biding
+        </button>
+        <button id="" class="tablinks" onclick="openCity(event, 'Structural Binding')">
+            Structural Binding
+        </button>
+        <button id="" class="tablinks" onclick="openCity(event, 'ngIf')">
+            *ngIf
+        </button>
+        <button id="" class="tablinks" onclick="openCity(event, 'ngSwitch')">
+            *ngSwitch
+        </button>
+        <button id="" class="tablinks" onclick="openCity(event, 'ngFor')">
+            *ngFor
+        </button>
+        <button id="" class="tablinks" onclick="openCity(event, 'Component Interaction')">
+            Component Interaction
+        </button>
+        <button id="" class="tablinks" onclick="openCity(event, 'Pipes')">Pipes</button>
+        <button id="" class="tablinks" onclick="openCity(event, 'Services')">Services</button>
+    </div>
+    <!-- Code for Vertical Tab Ends -->
+
+    <div id="codeme" class="tabcontent">
+        <h1>
+            Code Me
+            <i class="fa fa-youtube-play" style="font-size: 48px; color: red"></i>
+        </h1>
+    </div>
+
+    <!-- 1. Introduction to Angular-->
+    <div id="Introduction to Angular" class="tabcontent">
+        <h1 id="heading">Introduction to Angular</h1>
+        <div id="pre">
+            <pre id="notes">
+
+Angular
+    - Create new Angular application ( ng new code-Angular)
+    - Navigate inside the folder (cd code-Angular)
+    - Run using (ng serve) or (npm start)
+
+Angular Architecture
+    - Angular app are modular in nature.Every module represents a feature area in application
+    - Angular module is just line of code which can be exported or imported.
+    - Each module is made up of component and services.
+
+Modules
+	- Component
+	- Services
+
+Component
+	- A components controls the portion of views on the browser.
+	- Angular have at least one component which is RootComponent of the application this is called AppComponent by convention.
+	- All other component is nested inside these component.
+	- Each component have
+	    1.Html - Controls the view of component 
+	    2.Class or TS file - Controls the logic of component
+
+Angular Files
+     1. package.json - this file contains dependencies and dev dependencies which contains libraries or modules that is required to work our angular project.
+     2. Main.ts - Entry point to our Angular Application
+     3. app.module.ts - root module of the application
+     4. app.component.ts - root component of the application
+
+Angular Start
+  ->index.html (Rendered Page) 
+    -> Main.ts
+      ->app.module.ts
+        ->app.component.ts
+	  ->app.component.html
+	    ->At last it render the stuff
+
+Css(BootStrap)
+ - In this we are Using Boot Strap Css framework to out of the box without much worrying About Styling
+ - Run command ( npm install --save bootstrap@3) it will install locally.
+ - for Use in Project we need to configure and make Angular Aware about it.
+ - go to 
+	->angular.json add file location to styles "node_modules/bootstrap/dist/css/bootstrap.min.css"
+
+
+</pre>
+        </div>
+    </div>
+    <!-- 1. Introduction to Angular-->
+
+    <!-- 2. Introduction to Component-->
+    <div id="Introduction to Angular Component" class="tabcontent">
+        <h1 id="heading">Introduction to Angular Component</h1>
+        <div id="pre">
+            <pre id="notes">
+
+Components
+	-> Template - Html file
+	-> Class - TypeScript file
+	-> Metadata - Angular Require this Information need to decide if particular class is an angular component or a simple class.
+
+    - Metadata is described using decorator or component decorator which is feature of TypeScript.
+    - Component is Simply a typeScript class.
+
+Create Custom Component
+	- Create  a new folder server
+	- Create a ts file (server.component.ts)
+
+		import { Component } from '@angular/core' 
+		@Component({
+		   selector : 'app-server'
+		   templateUrl : './server.component.html'
+		})
+		export class ServerComponent{
+		}
+
+
+Create Default Component
+ - run the following command to generate new component (ng generate component test) or (ng g c test)
+	-> app.module.ts in declarations array contains all the component used by application
+
+
+Selector
+	1. selector : 'app-test'             -        &lt; app-test &gt; &lt;/app-test &gt;
+	2. selector : '.app-test'	     - 		      &lt; div class="app-test" &gt; &lt; /div &gt;
+	3. selector : '[app-test]'	     -  	      &lt; div app-text &gt; &lt; /div &gt;
+
+template
+	- templateUrl : Points to the Html file
+	- template : ` ` Inline template (Backtick)
+	
+Style
+	- stylesUrl : ['./cssfile']
+	- styles : [``] Inline Style
+
+
+</pre>
+        </div>
+    </div>
+    <!-- 2. Introduction to Component-->
+
+    <!-- 3. Data Binding -->
+    <div id="Data Binding" class="tabcontent">
+        <h1 id="heading">Data Binding</h1>
+        <div id="pre">
+            <pre id="notes">
+
+Data Binding (Used for Dynamic Binding)
+   - Data Binding is Simply a Communication between Business logic to View of our Application.
+   - In simple Data Binding is Simply and Communication between TypeScript file to html.
+
+Types of DataBinding
+ - OutputData.
+	1. String Interpolation ( {{ data }} )
+	2. Property Binding ( [property] = "data" )
+ - React to Events
+	1.Event Binding ( (event)="expression" )
+
+Combination of Above two bindings.
+	- Two-Way-Binding ( [(ngModel)] = "data" )
+
+
+</pre>
+        </div>
+    </div>
+    <!-- 3. Data Binding -->
+
+    <!-- 4. String Interpolation-->
+    <div id="String Interpolation" class="tabcontent">
+        <h1 id="heading">String Interpolation</h1>
+        <div id="pre">
+            <pre id="notes">
+
+Syntax
+	- {{ String }}
+Used
+	- {{ TypeScriptVariable }} or {{ 'simplestring' }}
+	- Can call method over here in string Interpolation which simply returns the string
+Example
+	- Expression {{ 2+2 }} Angular Evaluate the expression and show the result in the browser
+	- Concatenation {{ 'Welcome' + name }} Angular work with string Concatenation
+	- JavaScript Property and Methods {{ name.length }} or {{ name.toUpperCase() }}
+	- Also Called User Define method from the Class which only return data in string format
+
+Restriction
+	- Can't Write multi-line Expression or can't write Block Expression or can't add if or else block expression
+	- Can use ternary Expression
+	- Assigning the Expression to a variables {{ x = 2+2 }}
+	- Access to global Variables window Screen and so on {{ window.location.href }} find out location of currentUtl
+
+</pre>
+        </div>
+    </div>
+    <!-- 4. String Interpolation-->
+
+    <!-- 5. Property Binding-->
+    <div id="Property Binding" class="tabcontent">
+        <h1 id="heading">Property Binding</h1>
+        <div id="pre">
+            <pre id="notes">
+
+Property Binding
+	- Its the Same concept of binding data from typescript file to html but here we are binding the Actual Value such as boolean or other data types.
+	- In Property binding we are passing Actual value Such as True or false.
+
+Example
+	-	&lt; input type="text" value="Hari" &gt;        $0.getAttribute('value')      $0.value
+
+Attribute vs Property
+	- As you seen after overriding the value the $0.value changes and $0.getAttribute('value') remains constant.
+	- This is Because Attribute Initializes Dom property and then they are Done.we can't Change Attribute After Initializing.
+	- Attributes are defines by the HTML where as property is defines by the DOM (Document Object Model)
+	- So we Can Change DOM that means Property value also we can change
+	- With Property Binding in Angular we are Binding property to Dom Model
+
+Example
+	- &lt; input id="{{nameID}}" type="text" value="Hari" &gt;			nameID = 'ID'
+	- &lt; input [id]="nameID" type="text" value="Hari" &gt;
+	
+
+	- &lt; input disabled = {{'false'}} id="{{myID}}" type="text" value="Hari" &gt;
+	- &lt; input [disabled] = "false" id="{{myID}}" type="text" value="Hari" &gt;
+
+Example 
+	- &lt; button class="btn btn-primary" &gt; &lt; /button &gt;
+	- &lt; button class="btn btn-primary" [disabled]="!allowNewServer" &gt;Add Server &lt;/button &gt;
+	- &lt; p [innertext]="allowNewServer" &gt; &lt; /p &gt;
+
+TypeScript
+	- constructor(){
+		setTimeout(() =>{
+		   this.allowNewServer = true;
+		},2000)
+	  }
+	- ngOnInit(){
+	  }
+
+Use
+	- When we are going to Display Something in UI or Print Something Use String Interpolation
+	- When we want to change some property on behalf of and html file use Property Binding
+
+
+</pre>
+        </div>
+    </div>
+    <!-- 5. Property Binding -->
+
+    <!-- 6. Class and Style Binding -->
+    <div id="Class and Style Binding" class="tabcontent">
+        <h1 id="heading">Class and Style Binding</h1>
+        <div id="pre">
+            <pre id="notes">
+
+Class Binding
+   - Create Css class
+	.text-success{
+    	color:green;
+	}
+	.text-dange{
+    	color:red;
+	}
+	.text-special{
+    	font-style: italic;
+	}
+Html
+	- Regular way to bind the class is Using Class Attribute
+	- &lt; h2 class="text-success" &gt; Angular &lt; /h2 &gt;
+	- to use class binding we need to declare new property and assigned the class Name.
+
+TypeScript
+	- successClass = "text-success"
+	
+Html
+	- &lt; h2 [class]="successClass" &gt; JavaScript &lt; /h2 &gt;
+
+    - what happen we if we use the class attribute or class binding in the Same Html element
+	- $lt; h2 class="text-special" [class]="successClass" &gt; TypeScript &lt;/h2 &gt;
+	- you can see that text is in green but not in italic so a regular class attributes become a dummy attribute in the presence of class binding
+	- we have Another Syntax to class binding what this syntax does it can apply the class on basic of particular expression that evaluate either true or false
+
+TypeScript
+	- hasError = true
+
+Html
+	- &lt; h2 [class.text-danger]="hasError" &gt; Hari &lt; /h2 &gt;
+
+TypeScript
+  - if we want to apply multiple class then we have to use ngclassdirective
+	- hasError = true
+	- hasspecial = true
+	- messageClasses = {
+		"text-success":!this.hasError
+		"text-danger":this.hasError
+		"text-special":this.isSpecial
+	}
+
+	- &lt; h2 [ngClass]="messageClasses" &gt; CodeMe &lt; /h2 &gt;
+	- Class binding is really useful because it allow you o dynamically add or remove classes from Html Element
+	- on the based of Certain User Interaction  or state of an application.
+	- Can apply changes to class on changing property in ts file
+
+Style Binding
+	- Style Binding is very similar to class binding
+
+	- &lt; h2 [style.color]="'orange'" &gt; Hari &lt; /h2 &gt;
+	- Condition style binding is possible in Style Binding
+	- &lt; h2 [style.color]=" error ? 'red' : 'green'" &gt; Hari &lt; /h2 &gt;
+	- Also assign component class property during binding.
+
+	- &lt; h2 [style.color]="propertyColor" &gt; Hari &lt; /h2 &gt;          propertyColor="orange"
+	- To Use multiple style we need to use ngStyle Directive in Angular
+	- &lt; h2 [ngStyle]="ngBinding" &gt; Hari &lt; /h2 &gt;				ngBinding = { color:"yellow",fontStyle:"italic" }
+
+
+</pre>
+        </div>
+    </div>
+    <!-- 6. Class and Style Binding -->
+
+    <!-- 7. Event Binding -->
+    <div id="Event Binding" class="tabcontent">
+        <h1 id="heading">Event Binding</h1>
+        <div id="pre">
+            <pre id="notes">
+
+Event Binding
+  Syntax
+    - (click)="onChangeLanguage()"
+        
+HTML
+    &lt; button class="btn btn-primary" [disabled]="myNameID" &gt; Is Disable &lt; /button &gt;
+    &lt; p &gt;{{language}} &lt; p &gt;
+    
+TypeScript
+    - language = 'Hi Currently No programming Language we are using'
+    - onChangeLanguage(){
+        this.language = 'TypeScript is Used as a Programming language'
+       }
+    
+$event
+    - reserved variable in angular
+    - it is a special variable to angular
+    - it give all the information about the event that was raised
+    - event.type
+    
+    - we can also write the method in the html template itself
+    - "greting='welcome to codeme'"
+    
+Html
+    &lt; label &gt; Code &lt; /label &gt;
+    &lt; input 
+        type="text"
+        class="form-control"
+        (input)="onUpdate($event)" &gt;
+    &lt; p &gt; {{ codetext }} &lt; p &gt;
+    
+TypeScript
+    codetext = ''
+    onUpdate(event : Event){
+        this.serverName = (&lt; HTMLInputElement &gt; event.target).value;				event.target.value
+    }
+
+
+</pre>
+        </div>
+    </div>
+    <!-- 7. Event Binding -->
+
+    <!--Structural Binding-->
+    <div id="Structural Binding" class="tabcontent">
+        <h1 id="heading">Structural Binding</h1>
+        <div id="pre">
+            <pre id="notes">
+
+    - Directives are instruction in the Dom.Structure Directives are the directives or information to add or remove HTML element from the DOM.
+    - Components are kind of such instruction in the DOM.Once we place the selector of our component someone in our template.
+    - we are instruction Angular to add content of our component template and business logic in this place where we use the selector.
+    - Angular please add our component in this template.
+    - * represent its a structural directive which is really changing the DOM
+
+
+  Build in Directives
+	- nfIf			(Conditionally rendered)
+	- ngSwitch		(Conditionally rendered)
+	- ngFor			(List of Elements in HTML)
+
+</pre>
+        </div>
+    </div>
+    <!--Structural Binding-->
+
+    <!--ngIf -->
+    <div id="ngIf" class="tabcontent">
+        <h1 id="heading">*ngIf</h1>
+        <div id="pre">
+            <pre id="notes">
+
+ Html
+	&lt; h2 *ngIf="displayProperty ; else elseBlock" &gt; Hi I am from If Block &lt; /h2 &gt;
+
+	&lt; ng-template #elseBlock &gt;
+    	&lt; h2 &gt; Hi I am from Else Block &lt; /h2 &gt;
+	&lt; /ng-template &gt;
+
+ TypeScript
+	displayProperty = false;
+
+ Html
+	&lt; div *ngIf="displayProperty ; then ifBlock; else elseBlock" &gt; &lt; /div &gt;
+
+	&lt; ng-template #ifBlock &gt;
+    	&lt; h2 &gt; Hi I am from if block &lt; /h2 &gt;
+	&lt; /ng-template &gt;
+	&lt; ng-template #elseBlock &gt;
+    	&lt; h2 &gt; Hi I am from else block &lt; /h2 &gt;
+	&lt; /ng-template
+
+
+</pre>
+        </div>
+    </div>
+    <!--ngIf -->
+
+    <!--ngSwitch-->
+    <div id="ngSwitch" class="tabcontent">
+        <h1 id="heading">*ngSwitch</h1>
+        <div id="pre">
+            <pre id="notes">
+
+ ngSwitch
+   - ngSwitch directive is very similar to switch statement in another programming language
+   - the only difference is is Angular we are rendering Some html instead of some logic
+   - We have to use ngSwitch when we gona compare different values if we need to compare 2 values we Use ngIf statement
+
+ Syntax
+	- [ngSwitch]                        Cases - *ngSwitchCase                 Default - *ngSwitchDefault
+
+ Html
+	- &lt; div [ngSwitch]="language" &gt;
+		&lt; div *ngSwitchCase = "'TypeScript'" &gt; We are Using TypeScript &lt; /div &gt;
+		&lt; div *ngSwitchCase = "'JavaScript'" &gt; We are Using TypeScript &lt; /div &gt;
+		&lt; div *ngSwitchCase = "'Angular'" &gt; We are Using TypeScript &lt; /div &gt;
+		&lt; div *ngSwitchDefault &gt; Please Choose Any other programming language &lt; /div &gt;
+	  &lt; /div &gt;
+
+ TypeScript
+	- language = 'TypeScript'
+
+
+</pre>
+        </div>
+    </div>
+    <!--ngSwitch-->
+
+    <!--ngFor-->
+    <div id="ngFor" class="tabcontent">
+        <h1 id="heading">*ngFor</h1>
+        <div id="pre">
+            <pre id="notes">
+
+ngFor
+	- We already Discuss how to conditionally render element let take an example to display list of elements using ngFor Directive
+	- ngFor Directive is pretty much similar to for loop in any other programming language.
+	- the only difference is we are rendering the list of element in html instead of executing some logic
+
+Syntax
+	- *ngFor and here we are using advance for Each loop.
+
+Html
+	- &lt; div *ngFor = "let language of languages ; index as i" &gt;
+		&lt; h2 &gt; {{i}} {{language}} &lt; h2 &gt;
+	  &lt; /div &gt;
+
+TypeScript
+	- languages = ["TypeScript","Angular","JavaScript","C#"]
+
+	- We have couple more keyword to use specially for ngFor Directive
+
+Html
+	- &lt; div *ngFor = "let language of languages ; first as f" &gt; it will indicate whether the element is first element or not
+	- &lt; div *ngFor = "let language of languages ; last as l" &gt;
+	- &lt; div *ngFor = "let language of languages ; odd as o" &gt;
+	- &lt; div *ngFor = "let language of languages ; even as e" &gt;
+
+Html
+	&lt; label &gt; Codeme Notepad &lt; /label &gt;
+	&lt; input 
+    		type="text"
+    		class="form-control"
+    		(input)="onUpdatelanguage($event)" &gt;
+	&lt; button class="btn btn-primary" (click)="addlanguage()" &gt; Add Langauge &lt; /button &gt; 
+
+
+	&lt; div *ngFor="let lang of language" &gt;
+    	&lt; h2 &gt; {{lang}} &lt; /h2 &gt;
+	&lt; /div &gt;
+
+TypeScript
+
+	language  = ['TypeScript']
+  	templanguage : string = ''
+  	
+	onUpdatelanguage(event){
+    		this.templanguage = ( &lt; HTMLInputElement &gt; event.target).value;
+    		console.log('temperary text-----&gt;',this.templanguage)
+  	}
+  	
+	addlanguage(){
+    		this.language.push(this.templanguage);
+    		console.log('Updated Array------&gt;',this.language)
+	}
+
+
+</pre>
+        </div>
+    </div>
+    <!--ngFor-->
+
+    <!--Component Interaction-->
+    <div id="Component Interaction" class="tabcontent">
+        <h1 id="heading">Component Interaction</h1>
+        <div id="pre">
+            <pre id="notes">
+
+Component Interaction
+    - All this while we are working on our Dev component which is nested inside our root component
+    - App component is called our parent component and our test component is called child component
+    - Now as you seen in previous videos out component is working independently to each other.
+    - But while working with in project we come up with a scenario where our component need to communicate with each other.
+    - Then how they communicate with each other.
+    - they communicate with each other with the help of @input()(parent---->child) and @output()(child---->parent) decorator
+    - With Input decorator the child can accept the input from parent
+    - With output decorator the child will send out data or output to parent
+    - So here we are Simply going to pass name from appcomponent(parent) to devcomponent(child)
+    - And we are also passing Hi Codeme! from devcomponent(child)  to appcomponent(parent)
+
+
+ Html (Parent)
+	&lt; app-dev [parentData]="name" &gt; &lt; /app-dev &gt;
+
+ TypeScript (Parent)
+	name = 'Hari'
+
+ TypeScript (child)
+	@Input() parentData;  			or   			@Input('parentData') name;
+
+ Html(child)
+	&lt; h4 &gt; {{parentData}} &lt; /h4 &gt;			or			&lt; h4 &gt; {{name}} &lt; h4 &gt;
+
+
+	-Here we have successfully completed to sending data from parent component to child component
+	- So let start with send data from child component to parent component
+	- this is Slightly different because in parent component html we have a child component selector so we can easily bind data in this way.
+	- But in child component we don't have parent component selector so we can't send the data in same way.
+	- The Way child component send data to parent component is using Events
+	
+	
+ TypeScript (child)
+	- We are going to create object for eventemitter class and also importing same.
+
+	- @Output() childEvent = new EventEmitter()
+	- After that Simply we are going to fire this event on Button Click
+
+	- fireEvent(){
+		this.childEvent.emit('Hey Codeme');
+	  }
+
+ Html (child)
+	&lt; button (click)="fireEvent()" &gt; Send Event &lt; /button &gt;			
+    After event is Emitted on button Click so we need to capture this on button Click
+
+ Html (Parent)
+	- Just like how we bind to click event we can bind to the custom event as well
+	&lt; app-text (childEvent)="" [parentData]="name" &gt; &lt; /app-dev &gt;		
+    
+    Once the Event is capture now assign the to the property called message to $event variable
+	
+	&lt; app-text (childEvent)="message=$event" [parentData]="name" &gt; &lt; /app-dev &gt;
+
+ TypeScript (Parent)
+	- message;
+
+ Html (Parent)
+	- {{message}}
+
+
+</pre>
+        </div>
+    </div>
+    <!--Component Interaction-->
+
+    <!-- -->
+    <div id="" class="tabcontent">
+        <h1 id="heading"></h1>
+        <div id="pre">
+            <pre id="notes"></pre>
+        </div>
+    </div>
+    <!-- -->
+
+    <script>
+        //  for Vertical bar Navigation
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+
+        //Setting window height property
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        console.log("Width----->", w);
+        console.log("height----->", h);
+
+        function myFunction() {
+            var cw = window.innerWidth;
+            var ch = window.innerHeight;
+            console.log("Change Width------>", cw);
+            console.log("Change Height------>", ch);
+        }
+    </script>
+</body>
+
+</html>
