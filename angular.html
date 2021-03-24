@@ -7,7 +7,9 @@
     <title>Angular Notes | Hari</title>
     <link rel="shortcut icon" type="image/x-icon" href="https://hariomgola.github.io/dependencies/logo.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="./indexcss.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./indexAngular.css">
 </head>
 
 <body onresize="myFunction()">
@@ -624,7 +626,82 @@ Component Interaction
     <div id="Pipes" class="tabcontent">
         <h1 id="heading">Pipes</h1>
         <div id="pre">
-            <pre id="notes"></pre>
+            <pre id="notes">
+ Pipes
+	- Pipes allow us to transform data before displaying them into the view.
+	- So lets take an example of some of the Build in Pipes in Angular
+
+ TypeScript
+	- name : string = 'Hari'
+	- logo : string = 'Welcome to codeme'
+	- info = {
+		'name' : 'Hari',
+		'logo' : 'codeme'
+	  }
+
+ Html
+   
+  String Pipes
+	- &lt; /h3&gt;{{name}}&lt; /h3&gt;
+	- &lt; /h3&gt;{{name | lowercase}}&lt; /h3&gt;
+	- &lt; /h3&gt;{{name | uppercase}}&lt; /h3&gt;
+	- &lt; /h3&gt;{{logo | titlecase}}&lt; /h3&gt;
+	- &lt; /h3&gt;{{name | slice:3}}&lt; /h3&gt;
+	- &lt; /h3&gt;{{name | slice:3:7}}&lt; /h3&gt;
+	- &lt; /h3&gt;{{info | json}}&lt; /h3&gt;
+
+  Number Pipes
+	- for numbers we have number pipes.
+	- &lt; /h3&gt;{{1.234 | number:'1.2-3'}}&lt; /h3&gt;
+	- &lt; /h3&gt;{{1.234 | number:'3.4-5'}}&lt; /h3&gt;
+	- &lt; /h3&gt;{{1.234 | number:'3.1-2'}}&lt; /h3&gt;
+	
+	- minimum number of integer digit
+	- minimum number of decimal digit
+	- maximum bunber of decimal digit
+
+	- &lt; /h3&gt;{{0.25 | percent}}&lt; /h3&gt;
+	- &lt; /h3&gt;{{0.25 | currency}}&lt; /h3&gt;
+	- &lt; /h3&gt;{{0.25 | currency : 'INR'}}&lt; /h3&gt;    <!--Look at the ISO currency code for Same-->
+	- &lt; /h3&gt;{{0.25 | currency : 'INR' : 'code'}}&lt; /h3&gt;
+
+  Dates Pipes
+	&lt; /h3&gt;{{date}}&lt; /h3&gt;
+	&lt; /h3&gt;{{date | date:'short'}}&lt; /h3&gt;
+	&lt; /h3&gt;{{date | date:'shortDate'}}&lt; /h3&gt;
+	&lt; /h3&gt;{{date | date:'shortTime'}}&lt; /h3&gt;
+	&lt; /h3&gt;{{date | date:'medium'}}&lt; /h3&gt;
+	&lt; /h3&gt;{{date | date:'mediumDate'}}&lt; /h3&gt;
+	&lt; /h3&gt;{{date | date:'mediumTime'}}&lt; /h3&gt;
+	&lt; /h3&gt;{{date | date:'long'}}&lt; /h3&gt;
+	&lt; /h3&gt;{{date | date:'longDate'}}&lt; /h3&gt;
+	&lt; /h3&gt;{{date | date:'longTime'}}&lt; /h3&gt;
+	
+	- One thing to remember in mind that pipe will only transform the data only for view.
+
+ Custom Pipes
+	- Build-in Pipes are one of the most Usefull feature of Angular.
+	- But sometime build in pipes are not sufficient for the data formating.
+	- If we want to create the custom pipe we need one typescript class with pipe decorator coming from angular core.
+	- We need to use one interface which is pipe transform
+
+ Generating Pipe
+	-  ng g c age		- Simply create the pipe
+	-  ng g c pipe/age       - create the pipe on pipes folder
+
+    let _data ='code me'
+    let data = _data.split(" ");
+    let d = data[data.length-1];
+    console.log(d);
+
+    let currentYear : any = new Date().getFullYear() 
+    let birthYear : any = new Date(value).getFullYear()
+    return (currentYear-birthYear);
+
+    &lt; /h3&gt;{{dob | lastname}}&lt; /h3&gt;
+
+    public dob: Date = new Date("2001-01-16");
+            </pre>
         </div>
     </div>
     <!-- -->
@@ -633,7 +710,7 @@ Component Interaction
     <div id="Services" class="tabcontent">
         <h1 id="heading">Services</h1>
         <div id="pre">
-            <pre id="notes"></pre>
+            <pre id="notes">Coming Soon</pre>
         </div>
     </div>
     <!-- -->
@@ -647,7 +724,7 @@ Component Interaction
     </div>
     <!-- -->
 
-    <script src='./indexjs.js'></script>
+    <script src='./indexAngular.js'></script>
 </body>
 
 </html>
