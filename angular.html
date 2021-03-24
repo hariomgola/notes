@@ -4,138 +4,17 @@
 <!--Heading-->
 
 <head>
-    <!--Links-->
+    <title>Angular Notes | Hari</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://hariomgola.github.io/dependencies/logo.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <!--Style(CSS)-->
-    <style>
-        #heading {
-            text-align: center;
-            background-color: #f1f1f1;
-            border-left: 2px solid #4caf50;
-            border-right: 2px solid #4caf50;
-            border-top: 2px solid #4caf50;
-            border-bottom: 2px solid #4caf50;
-        }
-
-        #notes {
-            color: black;
-        }
-
-        #nav {
-            text-align: center;
-        }
-
-        #pre {
-            height: 85vh;
-            width: auto;
-            overflow-x: auto;
-            overflow-y: auto;
-            /* border-left: 3px solid #4caf50; */
-            background-color: none;
-            text-align: inherit;
-        }
-
-        body {
-            /*background: #E4E4E4 url(https://raw.github.com/subtlepatterns/SubtlePatterns/master/cardboard_flat.png) repeat;*/
-            background-color: #f6f8fa;
-        }
-
-        /*              Style for Verticle Tab Start                */
-        * {
-            box-sizing: border-box;
-
-            font-family: consolas;
-        }
-
-        body {
-            font-family: "Lato", sans-serif;
-        }
-
-        /* Style the tab */
-        .tab {
-            float: left;
-            border: none;
-            background-color: #f1f1f1;
-            width: 10%;
-            height: 95vh;
-            overflow-y: auto;
-        }
-
-        /* Style the buttons inside the tab */
-        .tab button {
-            display: block;
-            background-color: inherit;
-            color: black;
-            padding: 12px 16px;
-            width: 100%;
-            border: none;
-            outline: none;
-            text-align: left;
-            cursor: pointer;
-            transition: 0.3s;
-            font-size: small;
-        }
-
-        /* Change background color of buttons on hover */
-        .tab button:hover {
-            background-color: #f1f1f1;
-        }
-
-        /* Create an active/current "tab button" class */
-        .tab button.active {
-            background-color: #4caf50;
-        }
-
-        /* Style the tab content */
-        .tabcontent {
-            float: left;
-            padding: 0px 12px;
-            border: none;
-            width: 90%;
-            border-left: none;
-            height: 300px;
-        }
-
-        /*                Style for Vertical Tab End                */
-        /* width */
-        ::-webkit-scrollbar {
-            width: 3px;
-            height: 3px;
-        }
-
-        /* Track */
-        ::-webkit-scrollbar-track {
-            box-shadow: inset 0 0 5px grey;
-            border-radius: 10px;
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background: #4caf50;
-            border-radius: 10px;
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: red;
-        }
-
-        ::-webkit-scrollbar-button {
-            width: 60vh;
-            height: 20vh;
-        }
-
-        /* Scrollbar customization */
-    </style>
-    <!--Title-->
-    <title>Angular Notes</title>
+    <link rel="stylesheet" href="./indexcss.css">
 </head>
 
 <body onresize="myFunction()">
     <!-- Code for Vertical Tab Start -->
     <div class="tab">
         <button id="defaultOpen" class="tablinks" onclick="openCity(event, 'codeme')">
-            Code Me (Angular)
+            Hari Angular Notes
         </button>
         <button id="" class="tablinks" onclick="openCity(event, 'Introduction to Angular')">
             Introduction to Angular
@@ -741,23 +620,23 @@ Component Interaction
     </div>
     <!--Component Interaction-->
 
-<!--Pipes-->
-<div id="Pipes" class="tabcontent">
-    <h1 id="heading">Pipes</h1>
-    <div id="pre">
-        <pre id="notes"></pre>
+    <!--Pipes-->
+    <div id="Pipes" class="tabcontent">
+        <h1 id="heading">Pipes</h1>
+        <div id="pre">
+            <pre id="notes"></pre>
+        </div>
     </div>
-</div>
-<!-- -->
+    <!-- -->
 
-<!-- -->
-<div id="Services" class="tabcontent">
-    <h1 id="heading">Services</h1>
-    <div id="pre">
-        <pre id="notes"></pre>
+    <!-- -->
+    <div id="Services" class="tabcontent">
+        <h1 id="heading">Services</h1>
+        <div id="pre">
+            <pre id="notes"></pre>
+        </div>
     </div>
-</div>
-<!-- -->
+    <!-- -->
 
     <!-- -->
     <div id="" class="tabcontent">
@@ -768,38 +647,7 @@ Component Interaction
     </div>
     <!-- -->
 
-    <script>
-        //  for Vertical bar Navigation
-        function openCity(evt, cityName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(cityName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-
-        // Get the element with id="defaultOpen" and click on it
-        document.getElementById("defaultOpen").click();
-
-        //Setting window height property
-        var w = window.innerWidth;
-        var h = window.innerHeight;
-        console.log("Width----->", w);
-        console.log("height----->", h);
-
-        function myFunction() {
-            var cw = window.innerWidth;
-            var ch = window.innerHeight;
-            console.log("Change Width------>", cw);
-            console.log("Change Height------>", ch);
-        }
-    </script>
+    <script src='./indexjs.js'></script>
 </body>
 
 </html>
