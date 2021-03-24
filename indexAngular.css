@@ -1,11 +1,14 @@
 /**
  * Angular Notes 
  */
-* {
-    margin: 0;
-    padding: 0;
+ *{
     box-sizing: border-box;
-    font-family: 'Rancho', cursive;
+    font-family: 'IBM Plex Serif', serif;
+}
+
+body {
+    /*background: #E4E4E4 url(https://raw.github.com/subtlepatterns/SubtlePatterns/master/cardboard_flat.png) repeat;*/
+    background-color: #f6f8fa;
 }
 #heading {
     text-align: center;
@@ -25,7 +28,7 @@
 }
 
 #pre {
-    height: 85vh;
+    height: 87vh;
     width: auto;
     overflow-x: auto;
     overflow-y: auto;
@@ -34,21 +37,7 @@
     text-align: inherit;
 }
 
-body {
-    /*background: #E4E4E4 url(https://raw.github.com/subtlepatterns/SubtlePatterns/master/cardboard_flat.png) repeat;*/
-    background-color: #f6f8fa;
-}
-
 /*              Style for Verticle Tab Start                */
-* {
-    box-sizing: border-box;
-
-    font-family: consolas;
-}
-
-body {
-    font-family: "Lato", sans-serif;
-}
 
 /* Style the tab */
 .tab {
