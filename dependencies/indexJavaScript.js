@@ -1,3 +1,4 @@
+//Copyright @ 2021 Hariom Gola. All Right Reserved Not to be Used for Making profit
 /**
  *JavaScript Notes
  */
@@ -31,3 +32,4 @@ function myFunction() {
     console.log("Change Width------>", cw);
     console.log("Change Height------>", ch);
 }
+//Copyright @ 2021 Hariom Gola. All Right Reserved Not to be Used for Making profit

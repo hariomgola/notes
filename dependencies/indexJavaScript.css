@@ -1,7 +1,10 @@
+/*Copyright @ 2021 Hariom Gola. All Right Reserved Not to be Used for Making profit*/
 /**
 * JavaScript Notes
 */
 *{
+margin: 0;
+padding: 0;
 box-sizing: border-box;
 font-family: 'IBM Plex Serif', serif;
 }
@@ -12,11 +15,13 @@ background-color: #f6f8fa;
 }
 #heading {
 text-align: center;
+height: 5vh;
+font-size: 3vh;
 background-color: #f1f1f1;
-border-left: 2px solid #4caf50;
-border-right: 2px solid #4caf50;
-border-top: 2px solid #4caf50;
-border-bottom: 2px solid #4caf50;
+border-left: 0.3vh solid #4caf50;
+border-right: 0.3vh solid #4caf50;
+border-top: 0.3vh solid #4caf50;
+border-bottom: 0.3vh solid #4caf50;
 }
 
 #notes {
@@ -28,18 +33,20 @@ text-align: center;
 }
 
 #pre {
-height: 87vh;
+height: 90vh;
 width: auto;
 overflow-x: auto;
 overflow-y: auto;
 /* border-left: 3px solid #4caf50; */
-background-color: none;
+background-color: #fafafa;
 text-align: inherit;
+
 }
 
 /* Style for Verticle Tab Start */
 
 /* Style the tab */
+
 .tab {
 float: left;
 border: none;
@@ -77,11 +84,11 @@ background-color: #4caf50;
 /* Style the tab content */
 .tabcontent {
 float: left;
-padding: 0px 12px;
+padding: 0px 2px;
 border: none;
+height: 90vh;
 width: 90%;
 border-left: none;
-height: 300px;
 }
 
 /* Style for Vertical Tab End */
@@ -113,4 +120,34 @@ width: 60vh;
 height: 20vh;
 }
 
+.path {
+    animation: draw 5s infinite;
+}
+
+@keyframes draw {
+    50% {
+        stroke-dashoffset: 0;
+    }
+}
+
+/*Contact Section finish here*/
+#copyright
+{
+    position: fixed;
+   left: 0;
+   top: 95.2vh;
+   bottom: 0;
+   width: 99.8%;
+   height: 5vh;
+   background-color: #000000;
+   color: white;
+}
+
+#copyrightline{
+    font-size: 2vh;
+    padding: 0.8vh;
+    text-align: center;
+}
+
 /*JavaScript Notes CSS*/
+/*Copyright @ 2021 Hariom Gola. All Right Reserved Not to be Used for Making profit*/
