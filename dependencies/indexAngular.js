@@ -31,7 +31,3 @@ function myFunction() {
     console.log("Change Width------>", cw);
     console.log("Change Height------>", ch);
 }
-
-/**
- * JavaScript notes
- */
