@@ -6,6 +6,7 @@ All the style and notes are purely developed from scrach and made with :heart: a
 
 ## Notes
   :fire:Angular     -  https://hariomgola.github.io/notes/angular.html
+  
   :fire:JavaScript  -  https://hariomgola.github.io/notes/javascript.html
   
   
