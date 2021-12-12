@@ -3,6 +3,7 @@
 <html>
 <!--Heading-->
 <!-- Copyright @ 2021 Hariom Gola. All Right Reserved Not to be Used for Making profit -->
+
 <head>
   <title>JavaScript Notes | Hari</title>
   <link rel="shortcut icon" type="image/x-icon" href="https://hariomgola.github.io/dependencies/logo.png" />
@@ -11,6 +12,11 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./dependencies/indexJavaScript.css">
   <!--Google text api-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Faster+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shojumaru&display=swap" rel="stylesheet">
   <!--End-->
 </head>
 
@@ -71,8 +77,8 @@
     <button id="" class="tablinks" onclick="openCity(event, 'RequestF')">
       Request - FETCH
     </button>
-    <button id="" class="tablinks" onclick="openCity(event, 'Request')">
-      Request
+    <button id="" class="tablinks" onclick="openCity(event, 'whatNext')">
+      What Next ¯\_(ツ)_/¯
     </button>
   </div>
   <!-- Code for Vertical Tab Ends -->
@@ -757,8 +763,8 @@ A switch statement provides an alternative syntax that is easier to read and wri
   - Arrays hold lists of data, like customer names or product information. Imagine we owned a store and wanted to increase the price of every product in our catalog. 
   - That could be a lot of repeating code, but by using a for loop to iterate through the array we could accomplish this task easily.
 
-      const items = [ ‘mobile’ , ‘laptop’ , ‘camera’];
-      for(int i=0;i<items.length;i++)
+      const _items = [ ‘mobile’ , ‘laptop’ , ‘camera’];
+      for(int i=0;i<_items.length;i++)
       {
         Console.log(items[i]);
       }
@@ -767,11 +773,11 @@ A switch statement provides an alternative syntax that is easier to read and wri
   - When we have a loop running inside another loop, we call that a nested loop. One use for a nested for loop is to compare the elements in two arrays. 
   - For each round of the outer for loop, the inner for loop will run completely.
 
-        const frontEnd = [‘Html’ , ‘CSS’ ,’JavaScript’];
-        const BackEnd = [‘Node.js’ , ‘Asp.net’ , ‘C#’];
-        for ( int i=0 ;i<frontEnd.length;i++)
+        const _frontEnd = [‘Html’ , ‘CSS’ ,’JavaScript’];
+        const _BackEnd = [‘Node.js’ , ‘Asp.net’ , ‘C#’];
+        for ( int i=0 ;i<_frontEnd.length;i++)
         {
-          for( int j=0;j<BackEnd.length;j++)
+          for( int j=0;j<_BackEnd.length;j++)
           {
             Console.log(`${frontEnd[i]} ----- ${BackEnd[i]}`);
           }
@@ -2619,10 +2625,10 @@ The .catch() function takes only one argument, onRejected. In the case of a reje
     console.log(value);
     }
     
-    noAwait(); // Prints: Promise { <pending> }
+    noAwait(); // Prints: Promise { <-pending> }
     yesAwait(); // Prints: Yay, I resolved!
 
-  In the first async function, noAwait(), we left off the await keyword before myPromise(). In the second, yesAwait(), we included it. The noAwait() function logs Promise { <pending> } to the console. 
+  In the first async function, noAwait(), we left off the await keyword before myPromise(). In the second, yesAwait(), we included it. The noAwait() function logs Promise { <-pending> } to the console. 
   Without the await keyword, the function execution wasn’t paused. The console.log() on the following line was executed before the promise had resolved.
   Remember that the await operator returns the resolved value of a promise. When used properly in yesAwait(), the variable value was assigned the resolved value of the myPromise() promise, 
   whereas in noAwait(), value was assigned the promise object itself.
@@ -2857,8 +2863,8 @@ The .catch() function takes only one argument, onRejected. In the case of a reje
         Another way to take advantage of concurrency when we have multiple promises which can be executed simultaneously is to await a Promise.all().
         We can pass an array of promises as the argument to Promise.all(), and it will return a single promise. This promise will resolve when all of the promises in the argument array have resolved. This promise’s resolve value will be an array containing the resolved values of each promise from the argument array.
         async function asyncPromAll() {
-          const resultArray = await Promise.all([asyncTask1(), asyncTask2(), asyncTask3(), asyncTask4()]);
-          for (let i = 0; i<resultArray.length; i++){
+          const _resultArray = await Promise.all([asyncTask1(), asyncTask2(), asyncTask3(), asyncTask4()]);
+          for (let i = 0; i<_resultArray.length; i++){
             console.log(resultArray[i]); 
           }
         }
@@ -2877,7 +2883,7 @@ The .catch() function takes only one argument, onRejected. In the case of a reje
       async function purchase(){
         let item = await Promise.all([bookWindows(),bookMac(),bookIphone(),bookAndroid()])
         console.log('Hi we have following Stuff Available....')
-        for (let i = 0; i<item.length; i++){
+        for (let i = 0; i<_item.length; i++){
           console.log(item[i]); 
         }
       }
@@ -3049,7 +3055,7 @@ The .catch() function takes only one argument, onRejected. In the case of a reje
 
 # code snipets for post request
     // Information to reach API
-    const apiKey = '<key secret>';
+    const apiKey = 'KeySecret';
     const url = 'https://api.rebrandly.com/v1/links';
 
     // Some page elements
@@ -3101,6 +3107,16 @@ The .catch() function takes only one argument, onRejected. In the case of a reje
   </div>
   <!--Request Fetch End-->
 
+  <!--Request Fetch Start-->
+  <div id="whatNext" class="tabcontent">
+    <h1 id="heading">What Next</h1>
+    <div id="pre">
+      <h1 style="text-align: center;">¯\_(ツ)_/¯</h1>
+      <pre id="notes">Coming Soon</pre>
+    </div>
+  </div>
+  <!--Request Fetch End-->
+
 
   <!--Copy right Content hariom.kumar-->
   <div id="copyright">
@@ -3111,4 +3127,5 @@ The .catch() function takes only one argument, onRejected. In the case of a reje
   <script src='./dependencies/indexJavaScript.js'></script>
 </body>
 <!--Copyright @ 2021 Hariom Gola. All Right Reserved Not to be Used for Making profit-->
+
 </html>
