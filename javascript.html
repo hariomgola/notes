@@ -2881,9 +2881,205 @@ The .catch() function takes only one argument, onRejected. In the case of a reje
 
   <!--Request Start-->
   <div id="Request" class="tabcontent">
-    <h1 id="heading">Request</h1>
+    <h1 id="heading">Request - GET/POST</h1>
     <div id="pre">
-      <pre id="notes"><h1>Coming Soon</h1></pre>
+      <pre id="notes">
+
+# HTTP Requests
+  - One of JavaScript’s greatest assets is its non-blocking properties, or that it is an asynchronous language.
+  - Newspaper website take advantage of non-blocking property to provide a better user experiance. 
+  - Genreally a code is written so that user don't wait for gaint image to load before being allowed to read the actual article
+  - In above approach text is rendered first and image is loading in the background.
+
+# JavaScript Event loop
+  - JavaScript used an event loop to handle asyncronous function calls.
+  - When a program run, function calls are made and added to a stack.
+  - The function that make request that need to wait for server to response then get sent to a separate queue.
+  - Once the stack has cleared, them the function in the queue are executed.
+  - So for this concept we need to understand the system of Asyncronous JavaScript and XML or AJAX
+
+# Event Pool - https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop
+
+# code snipets 
+  console.log('First message!');
+  setTimeout(() => {
+   console.log('This message will always run last...');
+  }, 0);
+  console.log('Second message!');
+
+  // output
+  First message!
+  Second message!
+  This message will always run last...
+
+# XHR GET Requests #
+  - Asyncronous JavaScript and XML (AJAX), enables requests to be made after the initial page load.
+  - Initially, AJAX was used only for XML formatted data, now it can be used to make requests that have many different formats.
+  - MDN XML - https://developer.mozilla.org/en-US/docs/Web/XML/XML_introduction
+  - The XMLHttpRequest(XHR) API, named for XML, can be used to make many kinds of requests and supports other forms of data.
+  - We use GET to retrieve data from a source. Take a look at the boilerplate code in the diagram to see how to make an XHR GET request.
+
+# code snipets syntax - GET
+    const xhr = new XMLHttpRequest() // creating a new request to get the data
+    const url = 'https://api-to-call.com/endpoint' // defining the URL
+    xhr.responseType = 'json' // getting the data in form of JSON body
+    xhr.onreadystatechange = () =>{
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        return xhr.response;
+      }
+    }
+    // opening request and send the object
+    xhr.open('GET',url);
+    xhr.send()
+
+# code snipets example
+
+    // Information to reach API
+    const url = 'https://api.datamuse.com/words?'
+    const queryParams = 'rel_rhy='
+
+    // Selecting page elements
+    const inputField = document.querySelector('#input');
+    const submit = document.querySelector('#submit');
+    const responseField = document.querySelector('#responseField');
+
+    // AJAX function
+    const getSuggestions = () => {
+      const wordQuery = inputField.value
+      const endpoint = `${url}${queryParams}${wordQuery}`;
+      const xhr = new XMLHttpRequest();
+      xhr.responseType = 'json'
+      xhr.onreadystatechange=()=>{
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          // renderRawResponse(xhr.response)
+          renderResponse(xhr.response)
+        }
+      }
+      xhr.open('GET',endpoint)
+      xhr.send()
+    }
+
+    // Clear previous results and display results to webpage
+    const displaySuggestions = (event) => {
+      event.preventDefault();
+      while(responseField.firstChild){
+        responseField.removeChild(responseField.firstChild);
+      };
+      getSuggestions();
+    }
+
+    submit.addEventListener('click', displaySuggestions);
+
+ #  XHR GET Requests - UsingQuery string
+  - Here we are using the het request using query string 
+  - Query string - https://en.wikipedia.org/wiki/Query_string
+  - A query string is seperated from the URL using a ? character. After ?, you can then create a parameter which is a key value pair joined by a =.
+  - Example of Query string `https://api.datamuse.com/words?key=value`
+  - Is we want to add additional parameter we are going to use the & character to separate your parameters.
+  - Example of Query saperation = `https://api.datamuse.com/words?key=value&anotherKey=anotherValue`
+
+# code snipets using Query
+    // Information to reach API
+    const url = 'https://api.datamuse.com/words?';
+    const queryParams = 'rel_jjb='
+    const additionalParams = '&topics='
+
+    // Selecting page elements
+    const inputField = document.querySelector('#input');
+    const topicField = document.querySelector('#topic');
+    const submit = document.querySelector('#submit');
+    const responseField = document.querySelector('#responseField');
+
+    // AJAX function
+    const getSuggestions = () => {
+      const wordQuery = inputField.value;
+      const topicQuery =  topicField.value
+      const endpoint = `${url}${queryParams}${wordQuery}${additionalParams}${topicQuery}`;
+      
+      const xhr = new XMLHttpRequest();
+      xhr.responseType = 'json';
+
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          renderResponse(xhr.response);
+        }
+      }
+      
+      xhr.open('GET', endpoint);
+      xhr.send();
+    }
+
+    // Clear previous results and display results to webpage
+    const displaySuggestions = (event) => {
+      event.preventDefault();
+      while(responseField.firstChild){
+        responseField.removeChild(responseField.firstChild);
+      }
+      getSuggestions();
+    }
+
+    submit.addEventListener('click', displaySuggestions);
+
+# XHR POST Request 
+  - The main difference b/w get and post request is that a POST request requires additional information to be sent through the request. 
+  - This additional information is sent in the body of the post request
+ 
+# code snipets for post request 
+    const xhr = new XMLHttpRequest();
+    const url = 'https://api-to-call.com/endpoint'
+    const data = JSON.stringify({id: '200'});
+    xhr.responseType = 'json'
+
+    xhr.onreadystatechange = () =>{
+      if(xhr.readyState === XMLHttpRequest.DONE){
+        return xhr.response;
+      }
+    }
+
+    xhr.open('POST',url);
+    xhr.send(data)
+
+# code snipets for post request
+    // Information to reach API
+    const apiKey = '<key secret>';
+    const url = 'https://api.rebrandly.com/v1/links';
+
+    // Some page elements
+    const inputField = document.querySelector('#input');
+    const shortenButton = document.querySelector('#shorten');
+    const responseField = document.querySelector('#responseField');
+
+    // AJAX functions
+    const shortenUrl = () => {
+      const urlToShorten = inputField.value;
+      const data = JSON.stringify({destination: urlToShorten});
+      const xhr = new XMLHttpRequest();
+      xhr.responseType = 'json'
+      xhr.onreadystatechange = () =>{
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          // renderRawResponse(xhr.response);
+          renderResponse(xhr.response)
+          }
+      }
+
+      xhr.open('POST',url);
+      xhr.setRequestHeader('Content-type', 'application/json');
+      xhr.setRequestHeader('apikey', apiKey);
+      xhr.send(data)
+    }
+
+    // Clear page and call AJAX functions
+    const displayShortUrl = (event) => {
+      event.preventDefault();
+      while(responseField.firstChild){
+        responseField.removeChild(responseField.firstChild);
+      }
+      shortenUrl();
+    }
+
+    shortenButton.addEventListener('click', displayShortUrl);
+
+      </pre>
     </div>
   </div>
   <!--Request End-->
