@@ -1,5 +1,5 @@
 # Notes :fire:
-This Repository Contains All Cheat Sheet for Angular, Java, JavaScript and C#.
+This Repository Contains All Cheat Sheet for HTML, CSS, JavaScript, NodeJs, Angular, React.
 
 ## CopyRight
 All the style and notes are purely developed from scrach and made with :heart: and only used for educationaly purpose.
